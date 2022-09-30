@@ -1,26 +1,20 @@
-const db = require("./db");
+import {
+  getTodosUsuarios,
+  getUmUsuario,
+  postAddUsuario,
+  
+} from "./funcoesAxios.js";
+export const boxUsuarios = document.querySelector("[data-usuarios]");
+export const cadNome = document.querySelector("[data-cadNome]");
+export const cadEmail = document.querySelector("[data-cadEmail]");
+export const cadSenha = document.querySelector("[data-cadSenha]");
 
-//buscar usuarios
-async function buscarAll() {
-  const usuarios = await db.buscarTodosUsruarios();
-  console.log(usuarios);
-}
-
-//inserir usuarios
-
-async function inserir(nome, email, senha) {
-  await db.addUsuario(nome, email, senha);
-}
-
-// atualizar usuario
-async function atualizar(id, info) {
-  // info deve ser pasada em obj{"nome","email","senha"}
-  await db.atualizarUsuario(id, info);
-}
-//deletar usuario
-
-async function deletar(id) {
-  await db.deletarUsuario(id);
-}
-
+const btnCadastrarUsuario = document.querySelector(
+  "[data-botaoCadastrarUsuario]"
+);
+const btnAtualizarBanco = document.querySelector("[data-botaoAtualizarBanco]");
+//botao de atualizar o banco de dados
+btnAtualizarBanco.addEventListener("click", getTodosUsuarios);
+// botao cadastrar usuarios
+btnCadastrarUsuario.addEventListener("click", postAddUsuario);
 

@@ -23,9 +23,17 @@ async function conexao() {
 // buscar todos usurarios
 async function buscarTodosUsruarios() {
   const connect = await conexao();
-  const query = "SELECT * FROM usuarios;";
+  const query = "SELECT * FROM usuarios ;";
   const [usuarios] = await connect.query(query);
   return usuarios;
+}
+
+//buscar um usuario
+async function buscarUsuario(id) {
+  const connect = await conexao();
+  const query = "SELECT * FROM usuarios WHere id = ?;";
+
+  return await connect.query(query, id);
 }
 
 // inserir usuarios
@@ -33,6 +41,8 @@ async function addUsuario(nome, email, senha) {
   const connect = await conexao();
   const query = "INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ? );";
   const valores = [nome, email, senha];
+
+  console.log(await connect.query(query, valores));
   await connect.query(query, valores);
 }
 
@@ -57,4 +67,5 @@ module.exports = {
   addUsuario,
   atualizarUsuario,
   deletarUsuario,
+  buscarUsuario,
 };
