@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>formulario teste</title>
+    a
+  </head>
+  <body>
+    <body>
+      <section class="box_formulario">
+        <div>
+          <h1>formulario de cadastro</h1>
+          <div>
+            <input id="nome" type="text" placeholder="Nome Completo"  data-cadnome>
+            <input id="email" type="email" id="" placeholder="email"  data-cademail>
+            <input id="senha" type="password" id="" placeholder="senha"  data-cadsenha>
+            <button  class="botao" data-botaoCadastrarUsuario>cadastrar</button>
+          </div>
+        </div>
+        <div>
+          <h1>login</h1>
+          <form action="" class="form">
+            <input name="loginName" type="text" placeholder="Nome Completo">
+            <input name="loginSenha" type="password" id="" placeholder="senha">
+            <button type="submit" class="botao">logar</button>
+          </form>
+        </div>
+      </section>
+      <section class="box__banco" >
+          <div ><h2>banco de dados</h2>
+          <button data-botaoAtualizarBanco>atualizar banco</button></div>
+          <div class="usuarios" data-usuarios></div>
+      </section>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
